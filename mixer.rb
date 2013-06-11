@@ -1,5 +1,5 @@
 letters = ["T", "A", "I", "A", "I", "I", "C", "N", "E", "M", "D", "T"]
-letters_in_word = 8
+letters_in_word = 9
 
 
 letters_not_accepted = ('A'..'Z').to_a
@@ -27,4 +27,4 @@ File.open("words.txt") do |file|
     end
 
 
-# possibles
+puts possibles
