@@ -27,4 +27,6 @@ File.open("words.txt") do |file|
     end
 
 
-puts possibles
+	#  if word has more instances of a letter than the available letters has, remove it
+	# for every letter in the alphabet as a key, assign, in an array, the first item as number of instances that 
+	# the possible has. the second item, the number of instances that the letters[] have. if the first is larger than the second, delete the word
