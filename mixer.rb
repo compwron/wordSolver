@@ -42,25 +42,25 @@ def alphabet_map_for_letters(letters)
 	}.flatten
 
 	letters.each {|letter|
-		letter_count_of_available_letters[letter] += 1
+		letter_count_of_available_letters[letter.upcase] += 1
 	}
 
 	letter_count_of_available_letters
 end
 
 possible_letters_map = alphabet_map_for_letters(letters)
-
+real_possibles = []
 possibles.each {|word|
 	letters = word.strip.split("")
 	potential_alphabet_map = alphabet_map_for_letters(letters)
 	potential_alphabet_map.each {|alphabet_character|
-		if potential_alphabet_map[alphabet_character] <= possible_letters_map[alphabet_character] then
+		if (potential_alphabet_map[alphabet_character] == possible_letters_map[alphabet_character]) || (potential_alphabet_map[alphabet_character] < possible_letters_map[alphabet_character]) then
 			real_possibles += [word]
 		end
 	}
 }
 
-puts real_possibles
+puts real_possibles & real_possibles # removing duplicates
 
 
 
