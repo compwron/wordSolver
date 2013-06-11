@@ -32,16 +32,29 @@ File.open("words.txt") do |file|
 	# the possible has. the second item, the number of instances that the letters[] have. if the first is larger than the second, 
 	# delete the word
 
-alphabet = ('A'..'Z').to_a
+def alphabet_map_for_letters(letters)
+	alphabet = ('A'..'Z').to_a
 
-letter_count_of_available_letters = {}
-alphabet.each{|letter|
-	new_letter = {letter => 0}
-	letter_count_of_available_letters.merge!(new_letter)
-}.flatten
+	letter_count_of_available_letters = {}
+	alphabet.each{|letter|
+		new_letter = {letter => 0}
+		letter_count_of_available_letters.merge!(new_letter)
+	}.flatten
 
-letters.each {|letter|
-	letter_count_of_available_letters[letter] += 1
-}
+	letters.each {|letter|
+		letter_count_of_available_letters[letter] += 1
+	}
 
-puts letter_count_of_available_letters
+	letter_count_of_available_letters
+end
+
+puts alphabet_map_for_letters(letters)
+
+
+
+
+
+
+
+
+
