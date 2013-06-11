@@ -48,8 +48,19 @@ def alphabet_map_for_letters(letters)
 	letter_count_of_available_letters
 end
 
-puts alphabet_map_for_letters(letters)
+possible_letters_map = alphabet_map_for_letters(letters)
 
+possibles.each {|word|
+	letters = word.strip.split("")
+	potential_alphabet_map = alphabet_map_for_letters(letters)
+	potential_alphabet_map.each {|alphabet_character|
+		if potential_alphabet_map[alphabet_character] <= possible_letters_map[alphabet_character] then
+			real_possibles += [word]
+		end
+	}
+}
+
+puts real_possibles
 
 
 
