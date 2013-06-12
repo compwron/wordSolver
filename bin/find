@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/mixer"
+
+word_length = ARGV[0]
+available_letters = ARGV[1].strip.split("")
+#available_letters = ["T", "A", "I", "A", "I", "I", "C", "N", "E", "M", "D", "T"]
+puts Mixer.new(word_length, available_letters).possibles
