@@ -2,8 +2,6 @@ class Mixer
   attr_reader :possibles
 
   def initialize(letters_in_word, letters)
-    puts "going to make a word with #{letters_in_word} letters made from letters: #{letters}"
-
     possible_letters_map = alphabet_map_for_letters(letters)
     real_possibles = []
     find_words_with_X_characters(letters, letters_in_word).each { |word|
@@ -11,7 +9,7 @@ class Mixer
       potential_alphabet_map = alphabet_map_for_letters(letters)
       potential_alphabet_map.each { |alphabet_character|
         if (potential_alphabet_map[alphabet_character] == possible_letters_map[alphabet_character]) || (potential_alphabet_map[alphabet_character] < possible_letters_map[alphabet_character]) then
-          real_possibles += [word]
+          real_possibles += [word.strip]
         end
       }
     }
