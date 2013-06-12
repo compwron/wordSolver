@@ -29,7 +29,7 @@ class Mixer
 
     File.open("config/words.txt") do |file|
       file.each_line { |word|
-        if (word.size == number_of_letters_in_word) then
+        if (word.strip.size == number_of_letters_in_word) then
           keep_word = true
           letters_not_accepted.each { |letter|
             if (word.include?(letter) || word.include?(letter.downcase)) then
@@ -43,7 +43,6 @@ class Mixer
         end
       }
     end
-    puts "found #{possibles.size} words with the right size and none of the wrong characters"
     possibles
   end
 
