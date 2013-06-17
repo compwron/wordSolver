@@ -11,4 +11,9 @@ describe Mixer do
   it "possibles should include expered word 'cape'" do
   	subject.possibles.should include "cape"
   end
+
+  it "should find results for passed-in lowercase letters also" do
+  	lowercase_mixer = Mixer.new 4, ["c", "a", "p", "e"]
+  	lowercase_mixer.possibles.size.should == 14
+  end
 end

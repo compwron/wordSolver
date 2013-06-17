@@ -2,6 +2,8 @@ class Mixer
   attr_reader :possibles
 
   def initialize(letters_in_word, letters)
+    letters = letters.map {|letter| letter.upcase}
+
     possible_letters_map = alphabet_map_for_letters(letters)
     real_possibles = []
     find_words_with_X_characters(letters, letters_in_word).each { |word|
